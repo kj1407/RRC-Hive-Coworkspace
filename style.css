@@ -100,27 +100,32 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 .price-tag {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     font-weight: bold;
     color: var(--primary-blue);
 }
 
 /* Container for the effect */
 .flip-card {
-    background-color: transparent;
-    width: 100%; /* Changed from 300px to 100% for responsiveness */
-    height: 250px; /* Adjusted height to fit content better */
-    perspective: 1000px;
-    margin-bottom: 20px; /* Adds space between cards when they wrap on mobile */
+  background-color: transparent;
+  width: 100%;
+  height: 400px; /* Ensure this is tall enough for your content */
+  perspective: 1000px;
+  margin-bottom: 30px; /* Add spacing between cards on mobile */
 }
 /* The actual flipper */
 .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative; /* Change from absolute if necessary, or keep parent height fixed */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.recom{
+    font-size: 0.9rem;
 }
 
 /* Hover trigger */
@@ -428,8 +433,3 @@ h2, h3 { color: var(--primary-blue); font-weight: 700; }
     100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
 }
 
-/* Modal Styling for Full Screen Video */
-.modal-content {
-    background-color: transparent;
-    border: none;
-}
