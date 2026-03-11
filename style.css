@@ -192,7 +192,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, var(--primary-blue)); /* Fades into deep navy */
+    background: transparent; /* Fades into deep navy */
     color: white;
     padding: 30px 15px 15px;
     text-align: center;
@@ -212,7 +212,7 @@ body {
 }
 
 .community-card:hover .card-overlay {
-    background: rgba(0, 48, 91, 0.85); /* Darkens on hover */
+    background: transparent; /* Darkens on hover */
     transform: translateY(0);
 }
 
@@ -342,5 +342,94 @@ h2, h3 { color: var(--primary-blue); font-weight: 700; }
 }
 
 .gallery-item:hover .card-overlay {
-    background: rgba(0, 48, 91, 0.6); /* Brand Blue transparency on hover */
+    background:transparent; /* Brand Blue transparency on hover */
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* WhatsApp Green */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    /* Pulsing effect */
+    animation: pulse-green 2s infinite;
+}
+
+.whatsapp-float i {
+    font-size: 24px;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e; /* Darker WhatsApp Green */
+    color: white;
+    transform: translateY(-5px);
+}
+
+/* Pulse Animation */
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Mobile Tweaks */
+@media (max-width: 576px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+    }
+    .float-text {
+        display: none; /* Hide text on small screens, keep icon only */
+    }
+    .whatsapp-float {
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* Video Container Styling */
+.video-container iframe {
+    object-fit: cover;
+    transform: scale(1.5); /* Prevents black bars on different aspect ratios */
+}
+
+.video-play-btn {
+    width: 70px;
+    height: 70px;
+    background: var(--accent-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 106, 0, 0.5);
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 106, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
+}
+
+/* Modal Styling for Full Screen Video */
+.modal-content {
+    background-color: transparent;
+    border: none;
 }
