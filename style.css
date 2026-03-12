@@ -13,7 +13,7 @@ body {
 /* Navbar Customization */
 .navbar {
     background-color: transparent !important;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background: linear-gradient(rgb(252, 251, 251), rgba(70, 62, 62, 0.6));
 }
 .nav-link {
     color: white !important;
@@ -47,7 +47,6 @@ body {
   border-left: 3px solid rgb(243, 234, 234); /* Creates a solid black line 3px thick */
   height: auto;                /* Sets the length of the line */
 }
-
 
 /* Facility Icons */
 .facility-card {

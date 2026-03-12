@@ -64,7 +64,7 @@
                             <div class="row g-3">
                                 <div class="col-12">
                                     <label class="form-label">Name</label>
-                                    <input type="text" id="tourName" class="form-control" placeholder="Name" required>
+                                    <input type="text" id="tourName" class="form-control" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Phone Number</label>
@@ -75,15 +75,12 @@
                                     <input type="date" id="tourDate" class="form-control" required>
                                 </div>
                                 <div class="col-md-12">
-                                    <label class="form-label">Preferred Time (AM/PM)</label>
-                                    <div class="input-group">
-                                        <input type="time" id="tourTime" class="form-control" value="10:00" required>
-                                        <span class="input-group-text bg-light"><i class="fas fa-clock"></i></span>
-                                    </div>
+                                    <label class="form-label">Preferred Time</label>
+                                    <input type="time" id="tourTime" class="form-control" value="10:00" required>
                                 </div>
                                 <div class="col-12">
                                     <label class="form-label">Message (Optional)</label>
-                                    <textarea id="tourMsg" class="form-control" rows="2" placeholder="Tell us what you're looking for..."></textarea>
+                                    <textarea id="tourMsg" class="form-control" rows="2" placeholder="Any specific requirements?"></textarea>
                                 </div>
                             </div>
                             <button type="button" onclick="sendToWhatsApp()" class="btn btn-tour w-100 mt-4 shadow-sm">
@@ -98,11 +95,12 @@
 </div>
 
 <script>
-    // Set default date to tomorrow
+    // 1. Set default date to tomorrow automatically
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     document.getElementById('tourDate').valueAsDate = tomorrow;
 
+    // 2. Helper to convert 24h input to 12h AM/PM for the message
     function format12Hour(timeStr) {
         if (!timeStr) return "--:--";
         let [hrs, mins] = timeStr.split(':');
@@ -111,28 +109,36 @@
         return `${hrs}:${mins} ${ampm}`;
     }
 
+    // 3. Main Integration Function
     function sendToWhatsApp() {
+        // Capture Form Data
         const name = document.getElementById('tourName').value;
         const phone = document.getElementById('tourPhone').value;
         const date = document.getElementById('tourDate').value;
-        const time = format12Hour(document.getElementById('tourTime').value);
-        const msg = document.getElementById('tourMsg').value || "No extra requirements.";
+        const timeInput = document.getElementById('tourTime').value;
+        const timeFormatted = format12Hour(timeInput);
+        const msg = document.getElementById('tourMsg').value || "No extra notes.";
 
-        if(!name || !phone || !date || !time) {
+        // Basic Validation
+        if(!name || !phone || !date || !timeInput) {
             alert("Please fill in all required fields.");
             return;
         }
 
-        // Replace with your business number
-        const businessNumber = "919876543210"; 
+        // --- CONFIGURATION ---
+        // Replace with your actual business number (must include country code, no '+')
+        const businessNumber = "918903169940"; 
         
-        const messageText = `*New Tour Request - RRC Co-Workspace*%0A%0A` +
-                            `*Name:* ${name}%0A` +
-                            `*Phone:* ${phone}%0A` +
-                            `*Date:* ${date}%0A` +
-                            `*Time:* ${time}%0A` +
-                            `*Notes:* ${msg}`;
+        // Construct the Message
+        const messageText = `*New Tour Request - RRC Co-Workspace*%0A` +
+                            `------------------------------%0A` +
+                            `*Name:* ${encodeURIComponent(name)}%0A` +
+                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                            `*Date:* ${encodeURIComponent(date)}%0A` +
+                            `*Time:* ${encodeURIComponent(timeFormatted)}%0A` +
+                            `*Notes:* ${encodeURIComponent(msg)}`;
 
+        // Open WhatsApp
         window.open(`https://wa.me/${businessNumber}?text=${messageText}`, '_blank');
     }
 </script>
