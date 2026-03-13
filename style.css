@@ -1,7 +1,7 @@
 
 :root {
-    --primary-blue: #004274;
-    --accent-orange: #f39c12;
+    --primary-blue: #1B365D;
+    --accent-orange: #FDB813;
     --light-gray: #f8f9fa;
 }
 
@@ -10,17 +10,25 @@ body {
     color: #333;
 }
 
+.btn-color{
+    background-color: #FDB813 !important;
+    background: linear-gradient(rgb(247, 183, 33), rgba(238, 111, 13, 0.977));
+    border: none !important;
+    color: #fff !important;
+    transition: 0.3s ease;
+}
+
 /* Navbar Customization */
 .navbar {
     background-color: transparent !important;
-    background: linear-gradient(rgb(252, 251, 251), rgba(70, 62, 62, 0.6));
+    background: linear-gradient(rgb(252, 251, 251), rgba(245, 237, 237, 0.977));
 }
 .nav-link {
-    color: white !important;
+    color: #1B365D !important;
     margin: 0 10px;
 }
 .nav-link:hover {
-    color: var(--accent-orange) !important;
+    color: #FDB813 !important;
 }
 .navbar-brand img {
     max-height: 70px; /* Adjust based on logo visibility */
@@ -32,12 +40,10 @@ body {
 }
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
     background-position: center;
     padding: 100px 0;
-    color: white;
+    color: #1B365D ;
 }
 
 .pg-size{
@@ -215,6 +221,52 @@ body {
     transition: all 0.4s ease;
 }
 
+/* Testimonials Styling */
+.testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent-orange) !important; /* Matches RRC brand orange */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.testimonial-card img {
+    border: 3px solid #f8f9fa;
+}
+
+.testimonial-card p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+.marquee-content:hover {
+    animation-play-state: paused; /* Stops scrolling on hover */
+}
+
+.testimonial-item {
+    width: 350px; /* Fixed width for scrolling items */
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Scrolls half the width of the content */
+}
+
 /* Hover Effects */
 .community-card:hover {
     transform: translateY(-12px); /* Lifts the card */
@@ -243,6 +295,34 @@ body {
     padding: 30px;
 }
 
+/* 1. Set the default outline state */
+.btn-outline-primary {
+    border-color: #1B365D !important;
+    color: #1B365D !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* 2. Style the button when it is SELECTED (Checked) */
+.btn-check:checked + .btn-outline-primary {
+    background-color: #1B365D !important;
+    border-color: #1B365D !important;
+    color: #ffffff !important;
+}
+
+/* 3. Style the button on HOVER */
+.btn-outline-primary:hover {
+    background-color: #1B365D !important;
+    border-color: #1B365D !important;
+    color: #ffffff !important;
+}
+
+/* 4. Remove the default Bootstrap blue glow/shadow on focus */
+.btn-check:focus + .btn-outline-primary, 
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(27, 54, 93, 0.25) !important;
+}
+
 .btn-warning {
     background-color: var(--accent-orange);
     border: none;
@@ -262,7 +342,7 @@ footer {
 
 :root {
     --primary-blue: #00305b;      /* Deep Navy (Headers/Footers) */
-    --vibrant-blue: #007bff;      /* Icons/Links */
+    --vibrant-blue: #1B365D;      /* Icons/Links */
     --accent-orange: #ff6a00;     /* Call to Action Buttons */
     --light-gray: #f8f9fa;        /* Section Backgrounds */
 }
@@ -440,5 +520,44 @@ h2, h3 { color: var(--primary-blue); font-weight: 700; }
     0% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.7); }
     70% { box-shadow: 0 0 0 20px rgba(255, 106, 0, 0); }
     100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
+}
+
+.text-color {
+    color: #FDB813  !important;
+}
+
+.text-color-1 {
+    color: #1B365D  !important;
+}
+
+li {
+    list-style: none;
+}
+
+   /* Define the drawing animation */
+@keyframes drawHighlight {
+    0% { background-size: 0% 100%; }
+    100% { background-size: 100% 100%; }
+}
+
+.highlight-auto {
+    /* Uses your brand orange for the highlight */
+    background-image: linear-gradient(rgb(27, 54, 93), rgb(27, 54, 93));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: 0 90%; /* Adjust this to move highlight up/down */
+    
+    /* Animation settings */
+    animation: drawHighlight 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+    animation-delay: 0.5s; /* Starts slightly after page load */
+    
+    padding: 2px 4px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.text-shadow {
+    text-shadow: 4px 4px 4px rgba(0,0,0,0.5);
+    color: rgb(255, 255, 255);
 }
 
