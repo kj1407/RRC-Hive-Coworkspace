@@ -46,6 +46,44 @@ body {
     color: #1B365D ;
 }
 
+/* Force uniform card sizes */
+.benefit-card, .facility-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center;     /* Centers content horizontally */
+    height: 100%;            /* Makes card fill the column height */
+    min-height: 140px;       /* Sets a consistent base height */
+    text-align: center;
+    padding: 20px !important;
+}
+
+/* Ensure the Bootstrap row handles heights correctly */
+.row.g-3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-6.col-md-3 {
+    display: flex; /* Makes the column a flex container */
+}
+
+.highlight-auto {
+    /* Uses your brand orange for the highlight */
+    background-image: linear-gradient(rgb(247, 183, 33), rgba(238, 111, 13, 0.977));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: 0 90%; /* Adjust this to move highlight up/down */
+    
+    /* Animation settings */
+    animation: drawHighlight 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+    animation-delay: 0.5s; /* Starts slightly after page load */
+    
+    padding: 2px 4px;
+    display: inline-block;
+    font-weight: 600;
+}
+
 .pg-size{
     font-size: 0.8rem;
 }
