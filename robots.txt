@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kj1407.github.io/RRC-coworkspace/sitemap.xml
