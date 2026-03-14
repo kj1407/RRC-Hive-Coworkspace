@@ -214,6 +214,11 @@ function sendBookingToWhatsApp() {
     window.open(`https://wa.me/${myNumber}?text=${message}`, '_blank');
 }
 </script>
+<script>
+    document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+});
+</script>
 
 </body>
 </html>

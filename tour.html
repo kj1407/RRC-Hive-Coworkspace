@@ -145,6 +145,11 @@
         window.open(`https://wa.me/${businessNumber}?text=${messageText}`, '_blank');
     }
 </script>
+<script>
+    document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+});
+</script>
 
 </body>
 </html>
