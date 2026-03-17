@@ -41,7 +41,7 @@
             
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">Workspace</a></li>
                     <li class="nav-item"><a class="nav-link" href="#plans">Plans</a></li>
                     <li class="nav-item"><a class="nav-link" href="workspace gallery.html">Gallery</a></li>
@@ -122,7 +122,9 @@
     </header>
 
     <section id="why-choose" class="container py-5">
-        <h2 class="text-center text-color-1 fw-bold mb-5">Why Choose RRC Hive</h2>
+       <h2 class="text-center text-color-1 fw-bold mb-5 section-title">
+        <span>Why Choose RRC Hive</span>
+        </h2>
         
         <div class="row g-3 text-center justify-content-center">
             <div class="col-6 col-md-3 mb-3">
@@ -177,7 +179,11 @@
     </section>
 
     <section id="gallery" class="container py-5">
-        <h2 class="text-center text-color-1 fw-bold mb-5">Workspace Gallery</h2>
+        <br>
+        <br>
+        <h2 class="text-center text-color-1 fw-bold mb-5 section-title">
+            <span>Workspace Gallery</span>
+        </h2>
         <div class="row g-3">
             <div class="col-6 col-md-6 col-lg-4 col-sm-4">
                 <div class="gallery-item rounded-3 position-relative overflow-hidden shadow-sm">
@@ -237,8 +243,12 @@
     </section>
 
     <section id="facilities" class="container py-5">
-    <h2 class="text-center text-color-1 fw-bold mb-5">Facilities</h2>
-    
+        <br>
+        <br>
+    <h2 class="text-center text-color-1 fw-bold mb-5 section-title">
+        <span>Facilities</span>
+    </h2>
+
     <div class="row g-3 text-center">
         <div class="col-6 col-md-3 mb-3">
             <div class="w-100 rounded-4 facility-card shadow d-flex flex-column flex-md-row align-items-center justify-content-center">
@@ -292,7 +302,11 @@
     </section>
 
     <section id="community" class="container py-5">
-    <h2 class="text-center text-color-1 fw-bold mb-5">Community Events</h2>
+        <br>
+        <br>
+    <h2 class="text-center text-color-1 fw-bold mb-5 section-title">
+        <span>Community Events</span>
+    </h2>
     <div class="row g-4">
         <div class="col-6 col-lg-4">
             <div class="card community-card border-0 shadow-sm overflow-hidden">
@@ -366,8 +380,12 @@
     </section>
 
     <section id="plans" class="bg-light py-5">
+        <br>
+        <br>
     <div class="container">
-        <h2 class="text-center text-color-1 fw-bold mb-5">Workspace Options</h2>
+        <h2 class="text-center text-color-1 fw-bold mb-5 section-title">
+            <span>Workspace Options</span>
+        </h2>
         <div class="row g-4">
             <div class="col-md-4 col-sm-6 col-6">
                 <div class="flip-card plan-card">
@@ -578,9 +596,13 @@
     </section>
 
     <section id="testimonials" class="bg-light py-5 overflow-hidden">
+        <br>
+        <br>
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="text-color-1 fw-bold">Member Experiences</h2>
+            <h2 class="text-color-1 fw-bold section-title">
+                <span>Member Experiences</span>
+            </h2>
         </div>
         
         <div class="marquee-wrapper">
@@ -646,7 +668,11 @@
     </section>
 
     <section id="booking" class="container py-5">
-        <h2 class="text-center text-color-1 fw-bold mb-5">Book Meeting Room</h2>
+        <br>
+        <br>
+        <h2 class="text-center text-color-1 fw-bold mb-5 section-title">
+            <span>Book Meeting Room</span>
+        </h2>
         <div class="booking-container shadow-sm border bg-light p-4 rounded-4">
             <form id="bookingForm" onsubmit="event.preventDefault();">
                 <div class="row g-3">
@@ -699,7 +725,11 @@
     </section>
 
     <section id="contact" class="container py-5">
-        <h2 class="text-center text-color-1 fw-bold">Find Us</h2>
+        <br>
+        <br>
+        <h2 class="text-center text-color-1 fw-bold section-title">
+            <span>Find Us</span>
+        </h2>
         <p class="text-center text-muted mb-5">RRC Hive - Located in the heart of Thanjavur city</p>
         <div class="row g-0 rounded-4 overflow-hidden border shadow-sm">
             <div class="col-md-7">
@@ -889,26 +919,28 @@ navLinks.forEach(link => {
     });
 });
 
-// Optional: Auto-update on scroll (Scrollspy)
 window.addEventListener('scroll', () => {
-    let current = "";
+    let current = "home";
     const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 100) {
+        const sectionHeight = section.clientHeight;
+        // Detects the section when it's in the top 30% of the screen
+        if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
+    navLinks.forEach((link) => {
+        link.classList.remove('active'); // Remove from all
+        // Add only to the one matching the current section ID
         if (link.getAttribute('href').includes(current)) {
             link.classList.add('active');
         }
     });
 });
-
 </script>
 <script type="application/ld+json">
     {
