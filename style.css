@@ -90,6 +90,41 @@ body {
 #mainNavbar.scrolled .navbar-brand img {
     max-height: 55px; /* Shrink logo on scroll */
 }
+
+/* Base style for nav links */
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* The Orange Slash/Underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #FDB813; /* Your brand orange */
+    transition: width 0.3s ease;
+}
+
+/* Show slash on Hover */
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* The Active State (The fixed orange slash) */
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Optional: Change text color when active */
+.nav-link.active {
+    color: #FDB813 !important;
+}
+
 /* Hero Section */
 .hero-section {
     background-size: cover;
@@ -177,6 +212,31 @@ body {
     flex-shrink: 0; /* Prevents icon from squishing */
 }
 
+/* Calendar Container */
+.flatpickr-calendar {
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+/* Day Names (Mon, Tue...) */
+.flatpickr-weekday {
+    color: #1B365D !important; /* Your Brand Navy */
+    font-weight: bold;
+}
+
+/* Selected Day */
+.flatpickr-day.selected {
+    background: #ff6a00 !important; /* Your Brand Orange */
+    border-color: #ff6a00 !important;
+}
+
+/* Hover Effect */
+.flatpickr-day:hover {
+    background: rgba(255, 106, 0, 0.1) !important;
+}
+
 .facility-card span {
     font-size: 0.9rem; /* Smaller text to ensure it fits on one line if possible */
     line-height: 1.2;
@@ -197,7 +257,7 @@ body {
 .flip-card {
   background-color: transparent;
   width: 100%;
-  height: 400px; /* Ensure this is tall enough for your content */
+  height: 240px; /* Ensure this is tall enough for your content */
   perspective: 1000px;
   margin-bottom: 30px; /* Add spacing between cards on mobile */
 }
@@ -258,7 +318,7 @@ body {
 @media (max-width: 768px) {
     /* Allow the flip card to be taller on mobile */
     .flip-card, .flip-card-inner, .flip-card-front, .flip-card-back {
-        height: 320px !important; /* Increase this value until the button fits */
+        height: 220px !important; /* Increase this value until the button fits */
     }
 
     /* Adjust the font size slightly so it doesn't wrap as much */
@@ -291,11 +351,11 @@ body {
 }
 .border-bg-front{
     border-color: #FDB813;
-    border-width: 8px;
+    border-width: 2px;
 }
 .border-bg-back{
     border-color: #1B365D;
-    border-width: 8px;
+    border-width: 2px;
 }
 /* Community Card Styling */
 .community-card {
