@@ -1,0 +1,21 @@
+{
+  "name": "RRC HIVE Co-Workspace",
+  "short_name": "RRC HIVE",
+  "description": "Modern coworking space in Thanjavur & Kumbakonam",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1B365D",
+  "icons": [
+    {
+      "src": "src/img/icon/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "src/img/icons/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
