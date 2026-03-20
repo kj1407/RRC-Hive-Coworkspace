@@ -106,6 +106,7 @@ body {
 .benefit-card-1:hover i {
     transform: rotate(-10deg) scale(1.2);
     color: #1B365D !important;
+    background: #cfddf1;
     transition: transform 0.3s ease;
 }
 
