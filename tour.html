@@ -34,14 +34,15 @@
         </div>
     </div>
 
-<nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm">
-    <div class="container d-flex justify-content-between">
-        <a class="navbar-brand fw-bold" href="./index.html">
-            <img src="src/img/logo/Logo.png" alt="Logo" style="max-height: 50px;" class="me-1">
-        </a>
-        <a class="nav-link text-color-1 small" href="./index.html"><i class="fas fa-house"></i> Home</a>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand fw-bold" href="./index.html">
+                <img src="src/img/logo/Logo.png" alt="Logo" style="max-height: 50px;" class="me-1">
+            </a>
+            <a class="nav-link text-color-1 small" href="./index.html"><i class="fas fa-house"></i> Home</a>
+        </div>
+    </nav>
+    
     <div class="container">
         <div class="row justify-content-center gap-3">
         <div class="col-lg-10 mt-4">
@@ -104,72 +105,71 @@
         </div>
     </div>
     </div>
-</div>
 
-<script>
-    // 1. Set default date to tomorrow automatically
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById('tourDate').valueAsDate = tomorrow;
+    <script>
+        // 1. Set default date to tomorrow automatically
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('tourDate').valueAsDate = tomorrow;
 
-    // 2. Helper to convert 24h input to 12h AM/PM for the message
-    function format12Hour(timeStr) {
-        if (!timeStr) return "--:--";
-        let [hrs, mins] = timeStr.split(':');
-        let ampm = hrs >= 12 ? 'PM' : 'AM';
-        hrs = hrs % 12 || 12;
-        return `${hrs}:${mins} ${ampm}`;
-    }
-
-    // 3. Main Integration Function
-    function sendToWhatsApp() {
-        // Capture Form Data
-        const name = document.getElementById('tourName').value;
-        const phone = document.getElementById('tourPhone').value;
-        const date = document.getElementById('tourDate').value;
-        const timeInput = document.getElementById('tourTime').value;
-        const timeFormatted = format12Hour(timeInput);
-        const msg = document.getElementById('tourMsg').value || "No extra notes.";
-
-        // Basic Validation
-        if(!name || !phone || !date || !timeInput) {
-            alert("Please fill in all required fields.");
-            return;
+        // 2. Helper to convert 24h input to 12h AM/PM for the message
+        function format12Hour(timeStr) {
+            if (!timeStr) return "--:--";
+            let [hrs, mins] = timeStr.split(':');
+            let ampm = hrs >= 12 ? 'PM' : 'AM';
+            hrs = hrs % 12 || 12;
+            return `${hrs}:${mins} ${ampm}`;
         }
 
-        // --- CONFIGURATION ---
-        // Replace with your actual business number (must include country code, no '+')
-        const businessNumber = "918903169940"; 
+        // 3. Main Integration Function
+        function sendToWhatsApp() {
+            // Capture Form Data
+            const name = document.getElementById('tourName').value;
+            const phone = document.getElementById('tourPhone').value;
+            const date = document.getElementById('tourDate').value;
+            const timeInput = document.getElementById('tourTime').value;
+            const timeFormatted = format12Hour(timeInput);
+            const msg = document.getElementById('tourMsg').value || "No extra notes.";
+
+            // Basic Validation
+            if(!name || !phone || !date || !timeInput) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            // --- CONFIGURATION ---
+            // Replace with your actual business number (must include country code, no '+')
+            const businessNumber = "918903169940"; 
+            
+            // Construct the Message
+            const messageText = `*New Tour Request - RRC Co-Workspace*%0A` +
+                                `------------------------------%0A` +
+                                `*Name:* ${encodeURIComponent(name)}%0A` +
+                                `*Phone:* ${encodeURIComponent(phone)}%0A` +
+                                `*Date:* ${encodeURIComponent(date)}%0A` +
+                                `*Time:* ${encodeURIComponent(timeFormatted)}%0A` +
+                                `*Notes:* ${encodeURIComponent(msg)}`;
+
+            // Open WhatsApp
+            window.open(`https://wa.me/${businessNumber}?text=${messageText}`, '_blank');
+        }
+    </script>
+    <script>
+        document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('contextmenu', e => e.preventDefault());
+    });
+    </script>
+
+    <script>
+        window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
         
-        // Construct the Message
-        const messageText = `*New Tour Request - RRC Co-Workspace*%0A` +
-                            `------------------------------%0A` +
-                            `*Name:* ${encodeURIComponent(name)}%0A` +
-                            `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                            `*Date:* ${encodeURIComponent(date)}%0A` +
-                            `*Time:* ${encodeURIComponent(timeFormatted)}%0A` +
-                            `*Notes:* ${encodeURIComponent(msg)}`;
-
-        // Open WhatsApp
-        window.open(`https://wa.me/${businessNumber}?text=${messageText}`, '_blank');
-    }
-</script>
-<script>
-    document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('contextmenu', e => e.preventDefault());
-});
-</script>
-
-<script>
-    window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    
-    // Add a slight delay (500ms) for a smoother feel
-    setTimeout(() => {
-        preloader.classList.add('preloader-hidden');
-    }, 500);
-});
-</script>
+        // Add a slight delay (500ms) for a smoother feel
+        setTimeout(() => {
+            preloader.classList.add('preloader-hidden');
+        }, 500);
+    });
+    </script>
 
 </body>
 </html>

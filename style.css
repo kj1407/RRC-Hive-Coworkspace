@@ -6,9 +6,138 @@
 }
 
 body {
+    animation: fadeInPage 1s ease-in-out;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #333;
 }
+/* The hidden state */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* The visible state triggered by JS */
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay classes for a "staggered" look */
+.d-1 { transition-delay: 0.1s; }
+.d-2 { transition-delay: 0.2s; }
+.d-3 { transition-delay: 0.3s; }
+.d-4 { transition-delay: 0.4s; }
+.d-5 { transition-delay: 0.5s; }
+.d-6 { transition-delay: 0.6s; }
+.d-7 { transition-delay: 0.7s; }    
+.d-8 { transition-delay: 0.8s; }
+
+/* The base class for the reveal */
+.reveal-text-lr {
+    display: inline-block;
+    position: relative;
+    color: rgba(27, 54, 93, 0.1); /* Base "ghost" color before reveal (Navy) */
+    background: linear-gradient(to right, #1B365D 50%, rgba(27, 54, 93, 0.1) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* When the section becomes visible */
+.reveal-text-lr.visible {
+    background-position: 0 0;
+}
+
+/* Optional: Add an orange accent for the first word */
+.reveal-text-lr span {
+    color: #ff6a00;
+    -webkit-text-fill-color: #ff6a00;
+}
+
+.benefit-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0px);
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.benefit-card:hover {
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    border: 1px solid #FDB813;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Make the icon "pop" on hover */
+.benefit-card:hover i {
+    transform: rotate(-10deg) scale(1.2);
+    color: #FDB813 !important;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card-1 {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0px);
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.benefit-card-1:hover {
+    background: rgba(255, 255, 255, 1);
+    backdrop-filter: blur(10px);
+    border: 1px solid #1B365D;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Make the icon "pop" on hover */
+.benefit-card-1:hover i {
+    transform: rotate(-10deg) scale(1.2);
+    color: #1B365D !important;
+    transition: transform 0.3s ease;
+}
+
+.btn-color {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* The Shimmer effect */
+.btn-color::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.btn-color:hover::before {
+    left: 150%;
+}
+
+.btn-color:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(242, 101, 34, 0.3) !important;
+}
+
+
 
 #preloader {
     position: fixed;
@@ -23,6 +152,8 @@ body {
     z-index: 10000; /* Higher than WhatsApp button */
     transition: opacity 0.5s ease, visibility 0.5s ease;
 }
+
+.parallax-veil::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");opacity:.5;pointer-events:none}
 
 .loader-content {
     text-align: center;
@@ -80,6 +211,7 @@ body {
     border-radius: 6px;
     
 }
+
 /* Navbar Customization */
 .navbar {
     background-color: transparent !important;
@@ -213,7 +345,7 @@ body {
     transition: 0.3s;
 }
 .facility-card i {
-    color: var(--primary-blue);
+    color: #1B365D;
     font-size: 2rem;
     margin-bottom: 15px;
 }
@@ -235,7 +367,7 @@ body {
     height: 50px;
     background-color: #f1f6ff;
     border-radius: 10px;
-    color: var(--primary-blue) !important;
+    color: #1B365D !important;
     font-size: 1.5rem !important;
     flex-shrink: 0; /* Prevents icon from squishing */
 }
@@ -320,6 +452,7 @@ body {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    background-color: #fff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -338,7 +471,7 @@ body {
 
 /* Back Side */
 .flip-card-back {
-    background-color: var(--primary-blue);
+    background-color: white;
     color: white;
     transform: rotateY(180deg); /* This is the key: it's pre-rotated */
     z-index: 1;
