@@ -633,6 +633,10 @@ body {
     transition: all 0.4s ease;
 }
 
+.icon-size{
+    gap: 20px;
+}
+
 /* Testimonials Styling */
 .testimonial-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -978,5 +982,37 @@ li {
 .text-shadow {
     text-shadow: 4px 4px 4px rgba(0,0,0,0.5);
     color: rgb(255, 255, 255);
+}
+
+/* Styling for Desktop Icon view */
+@media (min-width: 992px) {
+    .nav-link i {
+        font-size: 0.8rem; /* Makes icons slightly larger on desktop */
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-link:hover i {
+        color: #FDB813; /* Your brand orange */
+        transform: scale(1.2); /* Slight pop effect */
+    }
+
+    /* Adjust the 'active' underline to work with icons */
+    .nav-link.active::after {
+        bottom: -10px; 
+    }
+}
+
+/* Styling for Mobile Text + Icon view */
+@media (max-width: 991px) {
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 5px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-link i {
+        width: 30px; /* Aligns icons vertically in the drawer */
+        color: #FDB813;
+    }
 }
 

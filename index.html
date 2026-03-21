@@ -26,36 +26,66 @@
 
     <main>
         <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-white" href="#">
-                <img src="src/img/logo/Logo.png" alt="RRC Co-Workspace Logo" class="d-inline-block align-text-top me-2">
-            </span></a>
-            
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <i class="fas fa-bars fs-2"></i>
-            </button>
-
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header border-bottom border-secondary">
-                    <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">RRC MENU</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
+            <div class="container">
+                <a class="navbar-brand fw-bold text-white" href="#">
+                    <img src="src/img/logo/Logo.png" alt="RRC Co-Workspace Logo" class="d-inline-block align-text-top me-2">
+                </a>
                 
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#gallery">Workspace</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#plans">Plans</a></li>
-                        <li class="nav-item"><a class="nav-link" href="workspace gallery.html">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                            <a href="booking.html" class="btn btn-color px-4 w-100 w-lg-auto">Book a Desk</a>
-                        </li>
-                    </ul>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <i class="fas fa-bars fs-2"></i>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header border-bottom border-secondary">
+                        <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">RRC MENU</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">
+                                    <i class="fas fa-home me-lg-0 me-2"></i>
+                                    <span class="">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#gallery" data-link-name="Home">
+                                    <i class="fas fa-briefcase me-lg-0 me-2"></i>
+                                    <span class="">Workspace</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#plans">
+                                    <i class="fas fa-tags me-lg-0 me-2"></i>
+                                    <span class="">Plans</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="workspace gallery.html">
+                                    <i class="fas fa-images me-lg-0 me-2"></i>
+                                    <span class="">Gallery</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#community">
+                                    <i class="fas fa-users me-lg-0 me-2"></i>
+                                    <span class="">Community</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">
+                                    <i class="fas fa-envelope me-lg-0 me-2"></i>
+                                    <span class="">Contact</span>
+                                </a>
+                            </li>
+                            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                                <a href="booking.html" class="btn btn-color px-4 w-100 w-lg-auto">Book a Desk</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </nav>
         <header id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-indicators">
@@ -66,7 +96,7 @@
 
         <div class="carousel-inner">    
             <div class="carousel-item active" data-bs-interval="2000">
-                <div class="carousel-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.174), rgba(0, 0, 0, 0.26)), url('./src/img/gallery/IMG_20260310_112644.jpg');">
+                <div class="carousel-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.174), rgba(0, 0, 0, 0.26)), url('./src/img/gallery/carousel-1.png');">
                     <div class="container h-100 d-flex align-items-center">
                         <div class="col-lg-7 animate__animated animate__fadeInLeft">
                             <h1 class="display-3 fw-bold mb-3 text-shadow">Coworking Space in Thanjavur</h1>
@@ -94,7 +124,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <div class="carousel-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.174), rgba(0, 0, 0, 0.26)), url('./src/img/gallery/IMG_20260310_112717.jpg');">
+                <div class="carousel-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.174), rgba(0, 0, 0, 0.26)), url('./src/img/gallery/carousel-2.jpeg');">
                     <div class="container h-100 d-flex align-items-center">
                         <div class="col-lg-7 animate__animated animate__fadeInLeft">
                             <h2 class="display-3 fw-bold mb-3 text-shadow">Coworking Space in Thanjavur</h2>
@@ -122,7 +152,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <div class="carousel-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.174), rgba(0, 0, 0, 0.26)),url('./src/img/gallery/IMG_20260310_112210.jpg');">
+                <div class="carousel-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.174), rgba(0, 0, 0, 0.26)),url('./src/img/gallery/carousel-3.jpg');">
                     <div class="container h-100 d-flex align-items-center">
                         <div class="col-lg-7 text-white animate__animated animate__fadeInLeft">
                             <h2 class="display-3 fw-bold mb-3 text-shadow">Coworking Space in Thanjavur</h2>
@@ -222,7 +252,7 @@
             <div class="row g-3">
                 <div class="col-6 col-md-6 col-lg-4 col-sm-4 reveal">
                     <div class="gallery-item rounded-3 position-relative overflow-hidden shadow-sm">
-                        <img src="./src/img/gallery/IMG_20260310_112644" alt="Main Office Area" class="img-fluid">
+                        <img src="./src/img/gallery/Coworkspace.jpg" alt="Main Office Area" class="img-fluid">
                         <div class="card-overlay">
                             <h5 class="fw-bold mb-0">Workspace</h5>
                         </div>
@@ -230,7 +260,7 @@
                 </div>
                 <div class="col-6 col-md-6 col-lg-4 col-sm-4 reveal">
                     <div class="gallery-item rounded-3 position-relative overflow-hidden shadow-sm">
-                        <img src="./src/img/gallery/IMG_20260310_112418" alt="Tech Setup" class="img-fluid">
+                        <img src="./src/img/gallery/Tech setup.jpeg" alt="Tech Setup" class="img-fluid">
                         <div class="card-overlay">
                             <h5 class="fw-bold mb-0">Tech Setup</h5>
                         </div>
@@ -238,7 +268,7 @@
                 </div>
                 <div class="col-6 col-md-6 col-lg-4 col-sm-4 reveal">
                     <div class="gallery-item rounded-3 position-relative overflow-hidden shadow-sm">
-                        <img src="./src/img/gallery/IMG_20260310_111130.jpg" alt="Meeting Room" class="img-fluid">
+                        <img src="./src/img/gallery/2.jpg" alt="Meeting Room" class="img-fluid">
                         <div class="card-overlay">
                             <h5 class="fw-bold mb-0">Meeting Room</h5>
                         </div>
@@ -246,7 +276,7 @@
                 </div>
                 <div class="col-6 col-md-6 col-lg-4 col-sm-4 reveal">
                     <div class="gallery-item rounded-3 position-relative overflow-hidden shadow-sm">
-                        <img src="./src/img/gallery/IMG_20260310_1108.jpg" alt="Collaboration Space" class="img-fluid">
+                        <img src="./src/img/gallery/Collaboration Space.jpg" alt="Collaboration Space" class="img-fluid">
                         <div class="card-overlay">
                             <h5 class="fw-bold mb-0">Collaboration Space</h5>
                         </div>
@@ -254,15 +284,15 @@
                 </div>
                 <div class="col-6 col-md-6 col-lg-4 col-sm-4 reveal">
                     <div class="gallery-item rounded-3 position-relative overflow-hidden shadow-sm">
-                        <img src="./src/img/gallery/IMG_20260310_1122.jpg" alt="Lounge Area" class="img-fluid">
+                        <img src="./src/img/gallery/Seminar.jpg" alt="Conference Room" class="img-fluid">
                         <div class="card-overlay">
-                            <h5 class="fw-bold mb-0">Lounge Area</h5>
+                            <h5 class="fw-bold mb-0">Conference Hall</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-6 col-lg-4 col-sm-4 reveal">
                     <div class="gallery-item rounded-3 position-relative overflow-hidden shadow-sm">
-                        <img src="./src/img/gallery/IMG_20260310_1111.jpg" alt="Private Cabin" class="img-fluid">
+                        <img src="./src/img/gallery/Private Cabin.jpeg" alt="Private Cabin" class="img-fluid">
                         <div class="card-overlay">
                             <h5 class="fw-bold mb-0">Private Cabin</h5>
                         </div>
@@ -1081,7 +1111,5 @@ document.querySelectorAll('.reveal-text-lr').forEach(el => textObserver.observe(
         <i class="fab fa-whatsapp"></i>
         <span class="float-text">Chat with us</span>
     </a>
-
-
 </body>
 </html>
