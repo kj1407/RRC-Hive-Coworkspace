@@ -33,13 +33,21 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm">
-        <div class="container d-flex justify-content-between">
-            <a class="navbar-brand fw-bold" href="./index.html">
-                <img src="src/img/logo/Logo.png" alt="Logo" style="max-height: 50px;" class="me-1">
+    <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm" style="background-color: var(--primary-blue);">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand fw-bold" href="./index.html">
+            <img src="src/img/logo/Logo.png" alt="RRC Co-Workspace Logo" style="max-height: 50px;" class="d-inline-block align-text-top me-1">
+        </a>
+
+        <div class="d-flex align-items-center gap-2 gap-md-3">
+            <a class="nav-link text-color-1 small px-2" href="./index.html">
+                <i class="fa-solid fa-house"></i> <span class="d-none d-sm-inline">Home</span>
             </a>
-            <a class="nav-link text-color-1 small" href="./index.html"><i class="fas fa-house"></i> Home</a>
+            <a href="booking.html" class="btn btn-color px-3 fw-bold shadow-sm">
+                Book <span class="d-none d-sm-inline">a Desk</span>
+            </a>
         </div>
+    </div>
     </nav>
     
     <div class="container">
@@ -151,7 +159,8 @@
                 <p class="small mb-0 opacity-50">© 2026 RRC Hive Coworking. All Rights Reserved.</p>
             </div>
         </div>
-        </footer>
+    </footer>
+
     <script>
         // 1. Set default date to tomorrow automatically
         const tomorrow = new Date();
