@@ -83,8 +83,8 @@ body {
 
 /* Optional: Add an orange accent for the first word */
 .reveal-text-lr span {
-    color: #ff6a00;
-    -webkit-text-fill-color: #ff6a00;
+    color: #FDB813;
+    -webkit-text-fill-color: #FDB813;
 }
 
 .benefit-card {
@@ -948,16 +948,16 @@ h3 {
     /* Vertical Center */
     justify-content: left;
     /* Horizontal Center */
-    padding: 20px;
+    padding: 16px;
     transition: background 0.3s ease;
 }
 
 .card-overlay h5 {
     color: white;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.9px;
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     /* Adds depth */
     margin: 0;
