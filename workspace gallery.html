@@ -1,310 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | RRC HIVE Coworkingspace</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="src/img/icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon/favicon.png">
-    <link rel="manifest" href="./site.webmanifest">
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-blue: #1B365D;
-            --vibrant-blue: #4A90E2;
-            --accent-orange: #FDB813;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery | RRC HIVE Coworkingspace</title>
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="src/img/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon/favicon.png">
+        <link rel="manifest" href="./site.webmanifest">
+        <link rel="stylesheet" href="./style.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; }
-
-        /* Navbar Styling */
-        .navbar { background-color: var(--primary-blue); padding: 15px 0; }
-        
-        /* Gallery Grid Styling */
-        .gallery-container { padding: 60px 12px; }
-        
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            height: 300px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: fill;
-            transition: transform 0.6s ease;
-        }
-
-        /* Hover Overlay Effect */
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 48, 91, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        
-        .overlay-icon {
-            color: white;
-            font-size: 2.5rem;
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-item:hover .overlay-icon { transform: translateY(0); }
-
-        /* Category Filter Buttons */
-        .filter-btn {
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
-            font-weight: 600;
-            margin: 5px;
-            transition: 0.3s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--primary-blue);
-            color: white;
-        }
-
-        footer { background-color: var(--primary-blue); color: white; }
-    </style>
-</head>
-<body>
-
-    <div id="preloader">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <img src="src/img/logo/Logo.png" alt="RRC HIVE" class="loader-logo ">
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm" style="background-color: var(--primary-blue);">
-    <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand fw-bold" href="./index.html">
-            <img src="src/img/logo/Logo.png" alt="RRC Co-Workspace Logo" style="max-height: 50px;" class="d-inline-block align-text-top me-1">
-        </a>
-
-        <div class="d-flex align-items-center gap-2 gap-md-3">
-            <a class="nav-link text-color-1 small px-2" href="./index.html">
-                <i class="fa-solid fa-house"></i> <span class="d-none d-sm-inline">Home</span>
-            </a>
-            <a href="booking.html" class="btn btn-color px-3 fw-bold shadow-sm">
-                Book <span class="d-none d-sm-inline">a Desk</span>
-            </a>
-        </div>
-    </div>
-    </nav>
-    <div class="gallery-container container">
-        <div class="text-center mb-5">
-            <h2 class="text-center text-color-1 fw-bold">Workspace Gallery</h2>
-            <p class="text-muted">Explore our state-of-the-art facilities in Thanjavur.</p>
-            
-            <!-- <div class="mt-4">
-                <button class="btn filter-btn active">All</button>
-                <button class="btn filter-btn">Workspaces</button>
-                <button class="btn filter-btn">Meeting Rooms</button>
-                <button class="btn filter-btn">Cafeteria</button>
-            </div> -->
-        </div>
-
-        <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/carousel-1.png" alt="Dedicated Desk">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/6.jpg" alt="Training Center">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/Meeting Room.jpg" alt="Collaboration Space">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/Events.jpg" alt="Meeting Room">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/Hackathon.jpg" alt="Tech Setup">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/carousel-3.jpg" alt="Lounge">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/10.jpg" alt="Dedicated Desk">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/5.jpg" alt="Training Center">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/7.jpg" alt="Collaboration Space">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/3.jpg" alt="Meeting Room">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/8.jpg" alt="Tech Setup">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/9.jpg" alt="Lounge">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/17.jpg" alt="Meeting Room">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/11.jpg" alt="Tech Setup">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/1.jpg" alt="Lounge">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/4.jpg" alt="Dedicated Desk">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/12.jpg" alt="Training Center">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/2.jpg" alt="Collaboration Space">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/16.jpg" alt="Meeting Room">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/13.jpg" alt="Tech Setup">
-                </div>
-            </div>
-            <div class="col-6 col-md-6 col-lg-4">
-                <div class="gallery-item">
-                    <img src="./src/img/gallery/15.jpg" alt="Lounge">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
-        <div class="container">
-            <div class="row g-4 mb-5">
-                <div class="col-md-4 col-lg-3">
-                    <h5 class="fw-bold text-color mb-4">Startup Services</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><i class="fas fa-check-circle text-info me-2"></i>Virtual Office Address</li>
-                        <li><i class="fas fa-check-circle text-info me-2"></i>Startup Registration Help</li>
-                        <li><i class="fas fa-check-circle text-info me-2"></i>GST & PAN/TAN Support</li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 col-lg-3">
-                    <h5 class="fw-bold text-color mb-4">Group Entities</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="#" class="text-decoration-none text-white opacity-75"><i class="fas fa-gavel me-2"></i>RRC Law Associates</a></li>
-                        <li><a href="#" class="text-decoration-none text-white opacity-75"><i class="fas fa-code me-2"></i>RRC Technologies</a></li>
-                        <li><a href="#" class="text-decoration-none text-white opacity-75"><i class="fas fa-graduation-cap me-2"></i>Training Programs</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 col-lg-3" id="contact">
-                    <h5 class="fw-bold text-color mb-4">Contact Us</h5>
-                    <p class="small mb-2"><i class="fas fa-map-marker-alt me-2"></i> Thanjavur</p>
-                    <p class="small mb-2"><i class="fas fa-phone-alt me-2"></i> +91 8015 8045 80</p>
-                    <p class="small"><i class="fas fa-envelope me-2"></i> info@rrcworkspace.com</p>
-                </div>
-
-                <div class="col-lg-3">
-                    <h5 class="fw-bold text-color mb-4">Connect With Us</h5>
-                    <div class="d-flex gap-3 fs-4">
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                    <div class="mt-4">
-                        <a href="booking.html" class="btn btn-color fw-bold w-100">Start Your Journey</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center pt-4 border-top border-secondary">
-                <p class="small mb-0 opacity-50">© 2026 RRC Hive Coworking. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    document.querySelectorAll('img').forEach(img => {
-    img.addEventListener('contextmenu', e => e.preventDefault());
-    });
-    </script>
-
-    <script>
-        // Function to hide the loader
-        function hidePreloader() {
-            const preloader = document.getElementById('preloader');
-            if (preloader && !preloader.classList.contains('preloader-hidden')) {
-                preloader.classList.add('preloader-hidden');
-                console.log("Preloader hidden successfully.");
+        <style>
+            :root {
+                --primary-blue: #1B365D;
+                --vibrant-blue: #4A90E2;
+                --accent-orange: #FDB813;
             }
-        }
 
-        // 1. Hide when everything is finished loading
-        window.addEventListener('load', function() {
-            setTimeout(hidePreloader, 1500); // 0.5s smooth delay
-        });
+            body {
+                background-color: #f8f9fa;
+                font-family: 'Segoe UI', sans-serif;
+            }
 
-        // 2. FAIL-SAFE: If 'load' event doesn't fire, hide it anyway after 3 seconds
-        setTimeout(hidePreloader, 3000);
-    </script>
-</body>
+            /* Navbar Styling */
+            .navbar {
+                background-color: var(--primary-blue);
+                padding: 15px 0;
+            }
+
+            /* Gallery Grid Styling */
+            .gallery-container {
+                padding: 60px 12px;
+            }
+
+            .gallery-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                height: 300px;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: all 0.4s ease;
+            }
+
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                transition: transform 0.6s ease;
+            }
+
+            /* Hover Overlay Effect */
+            .gallery-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 48, 91, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+
+            .gallery-item:hover img {
+                transform: scale(1.1);
+            }
+            .gallery-item:hover .gallery-overlay {
+                opacity: 1;
+            }
+
+            .overlay-icon {
+                color: white;
+                font-size: 2.5rem;
+                transform: translateY(20px);
+                transition: transform 0.4s ease;
+            }
+
+            .gallery-item:hover .overlay-icon {
+                transform: translateY(0);
+            }
+
+            /* Category Filter Buttons */
+            .filter-btn {
+                border: 2px solid var(--primary-blue);
+                color: var(--primary-blue);
+                font-weight: 600;
+                margin: 5px;
+                transition: 0.3s;
+            }
+
+            .filter-btn.active,
+            .filter-btn:hover {
+                background-color: var(--primary-blue);
+                color: white;
+            }
+
+            footer {
+                background-color: var(--primary-blue);
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="preloader">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <img src="src/img/logo/Logo.png" alt="RRC HIVE" class="loader-logo ">
+            </div>
+        </div>
+
+        <nav
+            class="navbar navbar-expand navbar-dark sticky-top shadow-sm"
+            style="background-color: var(--primary-blue);">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="./index.html">
+                    <img
+                        src="src/img/logo/Logo.png"
+                        alt="RRC Co-Workspace Logo"
+                        style="max-height: 50px;"
+                        class="d-inline-block align-text-top me-1">
+                </a>
+
+                <div class="d-flex align-items-center gap-2 gap-md-3">
+                    <a class="nav-link text-color-1 small px-2" href="./index.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="d-none d-sm-inline">Home</span>
+                    </a>
+                    <a href="booking.html" class="btn btn-color px-3 fw-bold shadow-sm">
+                        Book
+                        <span class="d-none d-sm-inline">a Desk</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="gallery-container container">
+            <div class="text-center mb-5">
+                <h2 class="text-center text-color-1 fw-bold">Workspace Gallery</h2>
+                <p class="text-muted">Explore our state-of-the-art facilities in Thanjavur.</p>
+
+                <!-- <div class="mt-4"> <button class="btn filter-btn active">All</button>
+                <button class="btn filter-btn">Workspaces</button> <button class="btn
+                filter-btn">Meeting Rooms</button> <button class="btn
+                filter-btn">Cafeteria</button> </div> -->
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/carousel-1.png" alt="Dedicated Desk">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/6.jpg" alt="Training Center">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/Meeting Room.jpg" alt="Collaboration Space">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/Events.jpg" alt="Meeting Room">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/Hackathon.jpg" alt="Tech Setup">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/carousel-3.jpg" alt="Lounge">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/10.jpg" alt="Dedicated Desk">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/5.jpg" alt="Training Center">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/7.jpg" alt="Collaboration Space">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/3.jpg" alt="Meeting Room">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/8.jpg" alt="Tech Setup">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/9.jpg" alt="Lounge">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/17.jpg" alt="Meeting Room">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/11.jpg" alt="Tech Setup">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/1.jpg" alt="Lounge">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/4.jpg" alt="Dedicated Desk">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/12.jpg" alt="Training Center">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/2.jpg" alt="Collaboration Space">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/16.jpg" alt="Meeting Room">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/13.jpg" alt="Tech Setup">
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-4">
+                    <div class="gallery-item">
+                        <img src="./src/img/gallery/15.jpg" alt="Lounge">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+            <div class="container">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4 col-lg-3">
+                        <h5 class="fw-bold text-color mb-4">Startup Services</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li>
+                                <i class="fas fa-check-circle text-info me-2"></i>Virtual Office Address</li>
+                            <li>
+                                <i class="fas fa-check-circle text-info me-2"></i>Startup Registration Help</li>
+                            <li>
+                                <i class="fas fa-check-circle text-info me-2"></i>GST & PAN/TAN Support</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3">
+                        <h5 class="fw-bold text-color mb-4">Group Entities</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li>
+                                <a href="#" class="text-decoration-none text-white opacity-75">
+                                    <i class="fas fa-gavel me-2"></i>RRC Law Associates</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-white opacity-75">
+                                    <i class="fas fa-code me-2"></i>RRC Technologies</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-white opacity-75">
+                                    <i class="fas fa-graduation-cap me-2"></i>Training Programs</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3" id="contact">
+                        <h5 class="fw-bold text-color mb-4">Contact Us</h5>
+                        <p class="small mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Thanjavur</p>
+                        <p class="small mb-2">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            +91 8015 8045 80</p>
+                        <p class="small">
+                            <i class="fas fa-envelope me-2"></i>
+                            info@rrcworkspace.com</p>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h5 class="fw-bold text-color mb-4">Connect With Us</h5>
+                        <div class="d-flex gap-3 fs-4">
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="mt-4">
+                            <a href="booking.html" class="btn btn-color fw-bold w-100">Start Your Journey</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center pt-4 border-top border-secondary">
+                    <p class="small mb-0 opacity-50">© 2026 RRC Hive Coworking. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document
+                .querySelectorAll('img')
+                .forEach(img => {
+                    img.addEventListener('contextmenu', e => e.preventDefault());
+                });
+        </script>
+
+        <script>
+            // Function to hide the loader
+            function hidePreloader() {
+                const preloader = document.getElementById('preloader');
+                if (preloader && !preloader.classList.contains('preloader-hidden')) {
+                    preloader
+                        .classList
+                        .add('preloader-hidden');
+                    console.log("Preloader hidden successfully.");
+                }
+            }
+
+            // 1. Hide when everything is finished loading
+            window.addEventListener('load', function () {
+                setTimeout(hidePreloader, 1500); // 0.5s smooth delay
+            });
+
+            // 2. FAIL-SAFE: If 'load' event doesn't fire, hide it anyway after 3 seconds
+            setTimeout(hidePreloader, 3000);
+        </script>
+    </body>
 </html>

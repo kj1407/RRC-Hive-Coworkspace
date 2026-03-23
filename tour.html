@@ -1,238 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule a Tour | RRC HIVE Coworkingspace</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="src/img/icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon/favicon.png">
-    <link rel="manifest" href="./site.webmanifest">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-blue: #1B365D;
-            --accent-orange: #FDB813;
-            --light-bg: #f8f9fa;
-        }
-        body { background-color: var(--light-bg); font-family: 'Segoe UI', sans-serif; }
-        .navbar { background-color: var(--primary-blue); }
-        .card { border: none; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .form-label { font-weight: 600; color: var(--primary-blue); font-size: 0.85rem; text-transform: uppercase; }
-        .btn-tour:hover { background-color: #25d366!important; transform: translateY(-3px); }
-        .info-icon { font-size: 2rem; color: var(--accent-orange); margin-bottom: 15px; }
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Schedule a Tour | RRC HIVE Coworkingspace</title>
+        <link rel="stylesheet" href="./style.css">
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="src/img/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="src/img/icon/favicon.png">
+        <link rel="manifest" href="./site.webmanifest">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            :root {
+                --primary-blue: #1B365D;
+                --accent-orange: #FDB813;
+                --light-bg: #f8f9fa;
+            }
+            body {
+                background-color: var(--light-bg);
+                font-family: 'Segoe UI', sans-serif;
+            }
+            .navbar {
+                background-color: var(--primary-blue);
+            }
+            .card {
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            }
+            .form-label {
+                font-weight: 600;
+                color: var(--primary-blue);
+                font-size: 0.85rem;
+                text-transform: uppercase;
+            }
+            .btn-tour:hover {
+                background-color: #25d366!important;
+                transform: translateY(-3px);
+            }
+            .info-icon {
+                font-size: 2rem;
+                color: var(--accent-orange);
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+    <body>
 
-    <div id="preloader">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <img src="src/img/logo/Logo.png" alt="RRC HIVE" class="loader-logo ">
-        </div>
-    </div>
-
-    <nav class="navbar navbar-expand navbar-dark sticky-top shadow-sm" style="background-color: var(--primary-blue);">
-    <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand fw-bold" href="./index.html">
-            <img src="src/img/logo/Logo.png" alt="RRC Co-Workspace Logo" style="max-height: 50px;" class="d-inline-block align-text-top me-1">
-        </a>
-
-        <div class="d-flex align-items-center gap-2 gap-md-3">
-            <a class="nav-link text-color-1 small px-2" href="./index.html">
-                <i class="fa-solid fa-house"></i> <span class="d-none d-sm-inline">Home</span>
-            </a>
-            <a href="booking.html" class="btn btn-color px-3 fw-bold shadow-sm">
-                Book <span class="d-none d-sm-inline">a Desk</span>
-            </a>
-        </div>
-    </div>
-    </nav>
-    
-    <div class="container">
-        <div class="row justify-content-center gap-3">
-        <div class="col-lg-10 mt-4">
-            <div class="card overflow-hidden justify-content-center">
-                 <h2 class="text-center fw-bold pt-3" style="color: black;"> Virtual Tour</h2>
-                 <p class="text-muted text-center"></p>
-                 <div class="d-flex flex-row justify-content-center mb-4">
-                    <iframe width="90%" height="315" src="https://www.youtube.com/embed/80PUIQfyTM4?si=bdDkIcf2uPSA44qL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                 </div>
+        <div id="preloader">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <img src="src/img/logo/Logo.png" alt="RRC HIVE" class="loader-logo ">
             </div>
         </div>
-        <div class="col-lg-10">
-            <div class="card overflow-hidden">
-                <div class="row g-0">
-                    <div class="col-md-5 bg-white p-5 d-flex flex-column justify-content-center border-end">
-                        <div class="text-center">
-                            <i class="fas fa-map-marker-alt info-icon"></i>
-                            <h2 class="fw-bold" style="color: var(--primary-blue);">Visit Us</h2>
-                            <p class="text-muted mb-4">Experience the vibe of RRC HIVE Coworkspace before you join.</p>
+
+        <nav
+            class="navbar navbar-expand navbar-dark sticky-top shadow-sm"
+            style="background-color: var(--primary-blue);">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand fw-bold" href="./index.html">
+                    <img
+                        src="src/img/logo/Logo.png"
+                        alt="RRC Co-Workspace Logo"
+                        style="max-height: 50px;"
+                        class="d-inline-block align-text-top me-1">
+                </a>
+
+                <div class="d-flex align-items-center gap-2 gap-md-3">
+                    <a class="nav-link text-color-1 small px-2" href="./index.html">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="d-none d-sm-inline">Home</span>
+                    </a>
+                    <a href="booking.html" class="btn btn-color px-3 fw-bold shadow-sm">
+                        Book
+                        <span class="d-none d-sm-inline">a Desk</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row justify-content-center gap-3">
+                <div class="col-lg-10 mt-4">
+                    <div class="card overflow-hidden justify-content-center">
+                        <h2 class="text-center fw-bold pt-3" style="color: black;">
+                            Virtual Tour</h2>
+                        <p class="text-muted text-center"></p>
+                        <div class="d-flex flex-row justify-content-center mb-4">
+                            <iframe
+                                width="90%"
+                                height="315"
+                                src="https://www.youtube.com/embed/80PUIQfyTM4?si=bdDkIcf2uPSA44qL"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen="allowfullscreen"></iframe>
                         </div>
-                        <ul class="list-unstyled">
-                            <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Free visit</li>
-                            <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Meet the community</li>
-                            <li class="mb-3 d-flex align-items-center"><i class="fas fa-check-circle text-success me-2"></i> Explore all facilities</li>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="card overflow-hidden">
+                        <div class="row g-0">
+                            <div
+                                class="col-md-5 bg-white p-5 d-flex flex-column justify-content-center border-end">
+                                <div class="text-center">
+                                    <i class="fas fa-map-marker-alt info-icon"></i>
+                                    <h2 class="fw-bold" style="color: var(--primary-blue);">Visit Us</h2>
+                                    <p class="text-muted mb-4">Experience the vibe of RRC HIVE Coworkspace before you join.</p>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3 d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Free visit</li>
+                                    <li class="mb-3 d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Meet the community</li>
+                                    <li class="mb-3 d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Explore all facilities</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-7 p-4 p-md-5 bg-white">
+                                <h4 class="fw-bold mb-4">Pick a Slot</h4>
+                                <form id="tourForm">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Name</label>
+                                            <input
+                                                type="text"
+                                                id="tourName"
+                                                class="form-control"
+                                                placeholder="Your Name"
+                                                required="required">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Mobile</label>
+                                            <input
+                                                type="tel"
+                                                id="tourPhone"
+                                                class="form-control"
+                                                placeholder="91..."
+                                                required="required">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Preferred Date</label>
+                                            <input type="date" id="tourDate" class="form-control" required="required">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Preferred Time</label>
+                                            <input
+                                                type="time"
+                                                id="tourTime"
+                                                class="form-control"
+                                                value="10:00"
+                                                required="required">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Message (Optional)</label>
+                                            <textarea
+                                                id="tourMsg"
+                                                class="form-control"
+                                                rows="2"
+                                                placeholder="Any specific requirements?"></textarea>
+                                        </div>
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onclick="sendToWhatsApp()"
+                                        class="btn btn-color  w-100 mt-4 shadow-sm">
+                                        <i class="fab fa-whatsapp me-2"></i>
+                                        REQUEST TOUR VIA WHATSAPP
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-white pt-5 pb-3 mt-5">
+            <div class="container">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4 col-lg-3">
+                        <h5 class="fw-bold text-color mb-4">Startup Services</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li>
+                                <i class="fas fa-check-circle text-info me-2"></i>Virtual Office Address</li>
+                            <li>
+                                <i class="fas fa-check-circle text-info me-2"></i>Startup Registration Help</li>
+                            <li>
+                                <i class="fas fa-check-circle text-info me-2"></i>GST & PAN/TAN Support</li>
                         </ul>
                     </div>
 
-                    <div class="col-md-7 p-4 p-md-5 bg-white">
-                        <h4 class="fw-bold mb-4">Pick a Slot</h4>
-                        <form id="tourForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" id="tourName" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Mobile</label>
-                                    <input type="tel" id="tourPhone" class="form-control" placeholder="91..." required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Preferred Date</label>
-                                    <input type="date" id="tourDate" class="form-control" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Preferred Time</label>
-                                    <input type="time" id="tourTime" class="form-control" value="10:00" required>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Message (Optional)</label>
-                                    <textarea id="tourMsg" class="form-control" rows="2" placeholder="Any specific requirements?"></textarea>
-                                </div>
-                            </div>
-                            <button type="button" onclick="sendToWhatsApp()" class="btn btn-color  w-100 mt-4 shadow-sm">
-                                <i class="fab fa-whatsapp me-2"></i> REQUEST TOUR VIA WHATSAPP
-                            </button>
-                        </form>
+                    <div class="col-md-4 col-lg-3">
+                        <h5 class="fw-bold text-color mb-4">Group Entities</h5>
+                        <ul class="list-unstyled footer-links">
+                            <li>
+                                <a href="#" class="text-decoration-none text-white opacity-75">
+                                    <i class="fas fa-gavel me-2"></i>RRC Law Associates</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-white opacity-75">
+                                    <i class="fas fa-code me-2"></i>RRC Technologies</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none text-white opacity-75">
+                                    <i class="fas fa-graduation-cap me-2"></i>Training Programs</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3" id="contact">
+                        <h5 class="fw-bold text-color mb-4">Contact Us</h5>
+                        <p class="small mb-2">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Thanjavur</p>
+                        <p class="small mb-2">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            +91 8015 8045 80</p>
+                        <p class="small">
+                            <i class="fas fa-envelope me-2"></i>
+                            info@rrcworkspace.com</p>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h5 class="fw-bold text-color mb-4">Connect With Us</h5>
+                        <div class="d-flex gap-3 fs-4">
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="text-white hover-orange">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="mt-4">
+                            <a href="booking.html" class="btn btn-color fw-bold w-100">Start Your Journey</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
 
-    <footer class="bg-dark text-white pt-5 pb-3 mt-5">
-        <div class="container">
-            <div class="row g-4 mb-5">
-                <div class="col-md-4 col-lg-3">
-                    <h5 class="fw-bold text-color mb-4">Startup Services</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><i class="fas fa-check-circle text-info me-2"></i>Virtual Office Address</li>
-                        <li><i class="fas fa-check-circle text-info me-2"></i>Startup Registration Help</li>
-                        <li><i class="fas fa-check-circle text-info me-2"></i>GST & PAN/TAN Support</li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 col-lg-3">
-                    <h5 class="fw-bold text-color mb-4">Group Entities</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="#" class="text-decoration-none text-white opacity-75"><i class="fas fa-gavel me-2"></i>RRC Law Associates</a></li>
-                        <li><a href="#" class="text-decoration-none text-white opacity-75"><i class="fas fa-code me-2"></i>RRC Technologies</a></li>
-                        <li><a href="#" class="text-decoration-none text-white opacity-75"><i class="fas fa-graduation-cap me-2"></i>Training Programs</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4 col-lg-3" id="contact">
-                    <h5 class="fw-bold text-color mb-4">Contact Us</h5>
-                    <p class="small mb-2"><i class="fas fa-map-marker-alt me-2"></i> Thanjavur</p>
-                    <p class="small mb-2"><i class="fas fa-phone-alt me-2"></i> +91 8015 8045 80</p>
-                    <p class="small"><i class="fas fa-envelope me-2"></i> info@rrcworkspace.com</p>
-                </div>
-
-                <div class="col-lg-3">
-                    <h5 class="fw-bold text-color mb-4">Connect With Us</h5>
-                    <div class="d-flex gap-3 fs-4">
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-white hover-orange"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                    <div class="mt-4">
-                        <a href="booking.html" class="btn btn-color fw-bold w-100">Start Your Journey</a>
-                    </div>
+                <div class="text-center pt-4 border-top border-secondary">
+                    <p class="small mb-0 opacity-50">© 2026 RRC Hive Coworking. All Rights Reserved.</p>
                 </div>
             </div>
+        </footer>
 
-            <div class="text-center pt-4 border-top border-secondary">
-                <p class="small mb-0 opacity-50">© 2026 RRC Hive Coworking. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+        <script>
+            // 1. Set default date to tomorrow automatically
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document
+                .getElementById('tourDate')
+                .valueAsDate = tomorrow;
 
-    <script>
-        // 1. Set default date to tomorrow automatically
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        document.getElementById('tourDate').valueAsDate = tomorrow;
-
-        // 2. Helper to convert 24h input to 12h AM/PM for the message
-        function format12Hour(timeStr) {
-            if (!timeStr) return "--:--";
-            let [hrs, mins] = timeStr.split(':');
-            let ampm = hrs >= 12 ? 'PM' : 'AM';
-            hrs = hrs % 12 || 12;
-            return `${hrs}:${mins} ${ampm}`;
-        }
-
-        // 3. Main Integration Function
-        function sendToWhatsApp() {
-            // Capture Form Data
-            const name = document.getElementById('tourName').value;
-            const phone = document.getElementById('tourPhone').value;
-            const date = document.getElementById('tourDate').value;
-            const timeInput = document.getElementById('tourTime').value;
-            const timeFormatted = format12Hour(timeInput);
-            const msg = document.getElementById('tourMsg').value || "No extra notes.";
-
-            // Basic Validation
-            if(!name || !phone || !date || !timeInput) {
-                alert("Please fill in all required fields.");
-                return;
+            // 2. Helper to convert 24h input to 12h AM/PM for the message
+            function format12Hour(timeStr) {
+                if (!timeStr) 
+                    return "--:--";
+                let [hrs, mins] = timeStr.split(':');
+                let ampm = hrs >= 12
+                    ? 'PM'
+                    : 'AM';
+                hrs = hrs % 12 || 12;
+                return `${hrs}:${mins} ${ampm}`;
             }
 
-            // --- CONFIGURATION ---
-            // Replace with your actual business number (must include country code, no '+')
-            const businessNumber = "918903169940"; 
-            
-            // Construct the Message
-            const messageText = `*New Tour Request - RRC Co-Workspace*%0A` +
-                                `------------------------------%0A` +
-                                `*Name:* ${encodeURIComponent(name)}%0A` +
-                                `*Phone:* ${encodeURIComponent(phone)}%0A` +
-                                `*Date:* ${encodeURIComponent(date)}%0A` +
-                                `*Time:* ${encodeURIComponent(timeFormatted)}%0A` +
-                                `*Notes:* ${encodeURIComponent(msg)}`;
+            // 3. Main Integration Function
+            function sendToWhatsApp() {
+                // Capture Form Data
+                const name = document
+                    .getElementById('tourName')
+                    .value;
+                const phone = document
+                    .getElementById('tourPhone')
+                    .value;
+                const date = document
+                    .getElementById('tourDate')
+                    .value;
+                const timeInput = document
+                    .getElementById('tourTime')
+                    .value;
+                const timeFormatted = format12Hour(timeInput);
+                const msg = document
+                    .getElementById('tourMsg')
+                    .value || "No extra notes.";
 
-            // Open WhatsApp
-            window.open(`https://wa.me/${businessNumber}?text=${messageText}`, '_blank');
-        }
-    </script>
-    <script>
-        document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('contextmenu', e => e.preventDefault());
-    });
-    </script>
+                // Basic Validation
+                if (!name || !phone || !date || !timeInput) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
 
-   <script>
-        // Function to hide the loader
-        function hidePreloader() {
-            const preloader = document.getElementById('preloader');
-            if (preloader && !preloader.classList.contains('preloader-hidden')) {
-                preloader.classList.add('preloader-hidden');
-                console.log("Preloader hidden successfully.");
+                // --- CONFIGURATION --- Replace with your actual business number (must include
+                // country code, no '+')
+                const businessNumber = "918903169940";
+
+                // Construct the Message
+                const messageText = `*New Tour Request - RRC Co-Workspace*%0A` +
+                        `------------------------------%0A` + `*Name:* ${encodeURIComponent(name)}%0A` +
+                        `*Phone:* ${encodeURIComponent(phone)}%0A` + `*Date:* ${encodeURIComponent(
+                    date
+                )}%0A` + `*Time:* ${encodeURIComponent(timeFormatted)}%0A` +
+                        `*Notes:* ${encodeURIComponent(msg)}`;
+
+                // Open WhatsApp
+                window.open(`https://wa.me/${businessNumber}?text=${messageText}`, '_blank');
             }
-        }
+        </script>
+        <script>
+            document
+                .querySelectorAll('img')
+                .forEach(img => {
+                    img.addEventListener('contextmenu', e => e.preventDefault());
+                });
+        </script>
 
-        // 1. Hide when everything is finished loading
-        window.addEventListener('load', function() {
-            setTimeout(hidePreloader, 1000); // 0.5s smooth delay
-        });
+        <script>
+            // Function to hide the loader
+            function hidePreloader() {
+                const preloader = document.getElementById('preloader');
+                if (preloader && !preloader.classList.contains('preloader-hidden')) {
+                    preloader
+                        .classList
+                        .add('preloader-hidden');
+                    console.log("Preloader hidden successfully.");
+                }
+            }
 
-        // 2. FAIL-SAFE: If 'load' event doesn't fire, hide it anyway after 3 seconds
-        setTimeout(hidePreloader, 3000);
-    </script>
+            // 1. Hide when everything is finished loading
+            window.addEventListener('load', function () {
+                setTimeout(hidePreloader, 1000); // 0.5s smooth delay
+            });
 
-</body>
+            // 2. FAIL-SAFE: If 'load' event doesn't fire, hide it anyway after 3 seconds
+            setTimeout(hidePreloader, 3000);
+        </script>
+
+    </body>
 </html>
