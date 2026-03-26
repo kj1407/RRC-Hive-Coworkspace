@@ -1268,3 +1268,51 @@ li {
         right: 15px !important;
     }
 }
+
+/* --- Custom Scrollbar for Chrome, Edge, and Safari --- */
+
+/* 1. The width of the entire scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Slimmer than default */
+}
+
+/* 2. The background of the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+/* 3. The actual draggable handle (The Thumb) */
+::-webkit-scrollbar-thumb {
+    background: #FDB813; /* Your brand orange */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Creates a padding effect */
+    transition: background 0.3s ease;
+}
+
+/* 4. Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #1B365D; /* Changes to Navy on hover */
+}
+
+/* --- Custom Scrollbar for Firefox --- */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #fd9013 #f1f1f1;
+}
+
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 9999; /* Above the navbar */
+}
+
+.scroll-progress-bar {
+    height: 4px;
+    background: #fd9013; /* Brand Orange */
+    width: 0%; /* Initial width */
+}
